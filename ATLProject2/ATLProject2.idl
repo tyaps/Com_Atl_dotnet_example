@@ -1,0 +1,76 @@
+// ATLProject2.idl : IDL source for ATLProject2
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ATLProject2.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(6BBC63A5-72BC-4F18-B8C4-A10F201E9C31),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ImyCom2 : IDispatch{
+	[id(1)] HRESULT getValue21([out, retval] LONG* t);
+	[id(2)] HRESULT getValue5([out, retval] LONG* res);
+	[id(3)] HRESULT getValue6([out, retval] LONG* res);
+	[id(4)] HRESULT getValue8(LONG a, [out, retval] LONG* res);
+	[id(5)] HRESULT getValue9_2([out, retval] LONG* res);
+};
+[
+	object,
+	uuid(B2BD09C8-D19D-4CFB-9124-4EA84882EA3C),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ImyCom3 : IDispatch{
+	[id(1)] HRESULT getValues3_1([out, retval] LONG* res);
+};
+[
+	object,
+	uuid(CDF67CE5-59CA-4B21-A57A-6DCE4A0E9CD4),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ImyCom4 : IDispatch{
+	[id(1)] HRESULT getValue1(LONG* r);
+	[id(2)] HRESULT getValue2([out, retval] LONG* res);
+	[id(3)] HRESULT getValue3([out, retval] LONG* res);
+};
+[
+	uuid(BD93880E-6EFD-4C43-854D-2D3FE0EE0DB5),
+	version(1.0),
+]
+library ATLProject2Lib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(2A6CE2DD-2848-4374-AFF0-852C6C107DD4)		
+	]
+	coclass myCom2
+	{
+		[default] interface ImyCom2;
+	};
+	[
+		uuid(DACCE1DB-B824-410B-8AE0-1262BDD08961)		
+	]
+	coclass myCom3
+	{
+		[default] interface ImyCom3;
+	};
+	[
+		uuid(CF876E73-03F4-41DC-9439-F5048AB19404)		
+	]
+	coclass myCom4
+	{
+		[default] interface ImyCom4;
+	};
+};
+
+import "shobjidl.idl";
